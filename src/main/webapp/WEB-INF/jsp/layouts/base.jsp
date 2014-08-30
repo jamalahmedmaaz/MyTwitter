@@ -74,14 +74,9 @@
     <tiles:insertAttribute name="content" />
     <div id="sidebar" class="grid_3 omega">
     <p>
-      JTwitter is an example project, created to learn and demonstrate how to use
-      Cassandra.  Running the project will present a website that has similar
-      functionality to Twitter.
+      JTwitter is an example project to learn Cassandra using Twitter Concepts.
     </p>
-    <p>
-      View the code for this site <a href="http://github.com/eevans/twissandra-j">on GitHub</a>
-    </p>
-    <tiles:insertAttribute name="sidebar" />
+   <tiles:insertAttribute name="sidebar" />
     </div>
   </div>
 </body>

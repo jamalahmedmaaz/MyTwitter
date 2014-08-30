@@ -23,11 +23,15 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
 
 import java.util.Collection;
 import java.util.Collections;
 
+@Service
 public class UserService implements UserDetailsService {
+
+    private TweetRepository tweetRepository;
 
     public static final Logger LOG = LoggerFactory.getLogger(UserService.class);
 
@@ -73,15 +77,11 @@ public class UserService implements UserDetailsService {
 
     }
 
-    TweetRepository m_tweetRepository;
-
-    public void setTweetRepository(TweetRepository tweetRepository) {
-        m_tweetRepository = tweetRepository;
-    }
 
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         LOG.info("Looking for user named {}", username);
-        String password = m_tweetRepository.getPassword(username);
+        CassandraTweetRepository cassandraTweetRepository = new CassandraTweetRepository();
+        String password = cassandraTweetRepository.getPassword(username);
         if (password == null) {
             throw new UsernameNotFoundException("No user named " + username);
         }

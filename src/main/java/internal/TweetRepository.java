@@ -37,7 +37,7 @@ public interface TweetRepository {
      * @param limit    maximum number of tweets to return.
      * @return a list of Tweet instances.
      */
-    List<Tweet> getUserline(String username, Date start, int limit);
+    List<CassandraTweet> getUserline(String username, Date start, int limit);
 
     /**
      * Returns a timeline.  A timeline is the materialized view of tweets made
@@ -48,15 +48,15 @@ public interface TweetRepository {
      * @param limit    maximum number of tweets to return.
      * @return a list of Tweet instances.
      */
-    List<Tweet> getTimeline(String username, Date start, int limit);
+    List<CassandraTweet> getTimeline(String username, Date start, int limit);
 
-    List<Tweet> getTweets(Date start, int limit);
+    List<CassandraTweet> getTweets(Date start, int limit);
 
-    Tweet getTweet(UUID id);
+    CassandraTweet getTweet(UUID id);
 
     void saveUser(String username, String password);
 
-    Tweet saveTweet(String username, String body);
+    CassandraTweet saveTweet(String username, String body);
 
     void addFriend(String username, String friend);
 

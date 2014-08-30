@@ -67,22 +67,22 @@ public class HBaseTweetRepositoryImpl implements HBaseTweetRepository {
     }
 
     @Override
-    public List<Tweet> getUserline(String username, Date start, int limit) {
+    public List<CassandraTweet> getUserline(String username, Date start, int limit) {
         return null;
     }
 
     @Override
-    public List<Tweet> getTimeline(String username, Date start, int limit) {
+    public List<CassandraTweet> getTimeline(String username, Date start, int limit) {
         return null;
     }
 
     @Override
-    public List<Tweet> getTweets(Date start, int limit) {
+    public List<CassandraTweet> getTweets(Date start, int limit) {
         return null;
     }
 
     @Override
-    public Tweet getTweet(UUID id) {
+    public CassandraTweet getTweet(UUID id) {
         return null;
     }
 
@@ -92,7 +92,7 @@ public class HBaseTweetRepositoryImpl implements HBaseTweetRepository {
     }
 
     @Override
-    public Tweet saveTweet(String username, String body) {
+    public CassandraTweet saveTweet(String username, String body) {
         return null;
     }
 

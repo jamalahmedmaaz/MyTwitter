@@ -14,21 +14,19 @@
  * limitations under the License.
  */
 
-package internal.elasticSearch;
-
-import internal.Tweet;
+package internal;
 
 import java.util.Date;
 import java.util.UUID;
 
-public class ElasticTweet implements Comparable<ElasticTweet>, Tweet {
+public class CassandraTweet implements Comparable<CassandraTweet>, Tweet {
 
     private final UUID id;
     private final Date postedAt;
     private final String postedBy;
     private final String body;
 
-    public ElasticTweet(String postedBy, String body, UUID id, Date postedAt) {
+    public CassandraTweet(String postedBy, String body, UUID id, Date postedAt) {
         this.postedBy = postedBy;
         this.body = body;
         this.id = id;
@@ -51,7 +49,7 @@ public class ElasticTweet implements Comparable<ElasticTweet>, Tweet {
         return postedAt;
     }
 
-    public int compareTo(ElasticTweet o) {
+    public int compareTo(CassandraTweet o) {
         return this.postedAt.compareTo(o.postedAt);
     }
 

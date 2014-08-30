@@ -55,19 +55,19 @@ public class TweetsController {
     ) {
         Date start = toDate(startMillis);
         if (principal == null) {
-            List<Tweet> tweets = m_tweetRepository.getTweets(start, limit + 1);
+            List<CassandraTweet> tweets = m_tweetRepository.getTweets(start, limit + 1);
             if (tweets.size() > limit) {
                 // we have more than the limit so we need to set up the 'next' variable
-                Tweet lastTweet = tweets.get(limit - 1);
+                CassandraTweet lastTweet = tweets.get(limit - 1);
                 model.addAttribute("next", lastTweet.getPostedAt());
             }
             model.addAttribute("tweets", tweets);
             return "publicLine";
         } else {
-            List<Tweet> tweets = m_tweetRepository.getTimeline(principal.getName(), start, limit + 1);
+            List<CassandraTweet> tweets = m_tweetRepository.getTimeline(principal.getName(), start, limit + 1);
             if (tweets.size() > limit) {
                 // we have more than the limit so we need to set up the 'next' variable
-                Tweet lastTweet = tweets.get(limit - 1);
+                CassandraTweet lastTweet = tweets.get(limit - 1);
                 model.addAttribute("next", lastTweet.getPostedAt());
             }
             model.addAttribute("username", principal.getName());
@@ -99,10 +99,10 @@ public class TweetsController {
                                @RequestParam(value = "limit", defaultValue = DEFAULT_LIMIT) int limit
     ) {
         Date start = toDate(startMillis);
-        List<Tweet> tweets = m_tweetRepository.getTweets(start, limit + 1);
+        List<CassandraTweet> tweets = m_tweetRepository.getTweets(start, limit + 1);
         if (tweets.size() > limit) {
             // we have more than the limit so we need to set up the 'next' variable
-            Tweet lastTweet = tweets.get(limit - 1);
+            CassandraTweet lastTweet = tweets.get(limit - 1);
             model.addAttribute("next", lastTweet.getPostedAt());
         }
         model.addAttribute("tweets", tweets);
@@ -116,10 +116,10 @@ public class TweetsController {
     ) {
         Date start = toDate(startMillis);
 
-        List<Tweet> tweets = m_tweetRepository.getUserline(username, start, limit + 1);
+        List<CassandraTweet> tweets = m_tweetRepository.getUserline(username, start, limit + 1);
         if (tweets.size() > limit) {
             // we have more than the limit so we need to set up the 'next' variable
-            Tweet lastTweet = tweets.get(limit - 1);
+            CassandraTweet lastTweet = tweets.get(limit - 1);
             model.addAttribute("next", lastTweet.getPostedAt());
         }
         model.addAttribute("principal", principal);

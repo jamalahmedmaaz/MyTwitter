@@ -92,17 +92,17 @@ public class CassandraTweetRepository implements TweetRepository {
     /**
      * {@inheritDoc}
      */
-    public List<Tweet> getUserline(String username, Date start, int limit) {
+    public List<CassandraTweet> getUserline(String username, Date start, int limit) {
         ResultSet queryResult = execute(
                 "SELECT tweetid, body FROM userline WHERE username = '%s' AND tweetid < maxTimeuuid('%d') ORDER BY tweetid DESC LIMIT %d",
                 username,
                 start.getTime(),
                 limit);
-        List<Tweet> tweets = new ArrayList<Tweet>();
+        List<CassandraTweet> tweets = new ArrayList<CassandraTweet>();
 
         for (Row row : queryResult) {
             UUID id = row.getUUID("tweetid");
-            tweets.add(new Tweet(username, row.getString("body"), id, fromUUID1(id)));
+            tweets.add(new CassandraTweet(username, row.getString("body"), id, fromUUID1(id)));
         }
 
         return tweets;
@@ -111,36 +111,36 @@ public class CassandraTweetRepository implements TweetRepository {
     /**
      * {@inheritDoc}
      */
-    public List<Tweet> getTimeline(String username, Date start, int limit) {
+    public List<CassandraTweet> getTimeline(String username, Date start, int limit) {
         ResultSet queryResult = execute(
                 "SELECT tweetid, posted_by, body FROM timeline WHERE username = '%s' AND tweetid < maxTimeuuid('%d') ORDER BY tweetid DESC LIMIT %d",
                 username,
                 start.getTime(),
                 limit);
-        List<Tweet> tweets = new ArrayList<Tweet>();
+        List<CassandraTweet> tweets = new ArrayList<CassandraTweet>();
 
         for (Row row : queryResult) {
             UUID id = row.getUUID("tweetid");
-            tweets.add(new Tweet(row.getString("posted_by"), row.getString("body"), id, fromUUID1(id)));
+            tweets.add(new CassandraTweet(row.getString("posted_by"), row.getString("body"), id, fromUUID1(id)));
         }
 
         return tweets;
     }
 
-    public List<Tweet> getTweets(Date start, int limit) {
+    public List<CassandraTweet> getTweets(Date start, int limit) {
         return getTimeline(PUBLIC_USERLINE_KEY, start, limit);
     }
 
-    public Tweet getTweet(UUID id) {
+    public CassandraTweet getTweet(UUID id) {
         Row row = getOneRow(execute("SELECT username, body FROM tweets WHERE tweetid = %s", id.toString()));
-        return row != null ? new Tweet(row.getString("username"), row.getString("body"), id, fromUUID1(id)) : null;
+        return row != null ? new CassandraTweet(row.getString("username"), row.getString("body"), id, fromUUID1(id)) : null;
     }
 
     public void saveUser(String username, String password) {
         execute("INSERT INTO users (username, password) VALUES ('%s', '%s')", username, password);
     }
 
-    public Tweet saveTweet(String username, String body) {
+    public CassandraTweet saveTweet(String username, String body) {
         UUID id = UUIDs.timeBased();
 
         // Create the tweet in the tweets cf
@@ -175,7 +175,7 @@ public class CassandraTweetRepository implements TweetRepository {
                     body);
         }
 
-        return new Tweet(username, body, id, fromUUID1(id));
+        return new CassandraTweet(username, body, id, fromUUID1(id));
     }
 
     public void addFriend(String username, String friend) {

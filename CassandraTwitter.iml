@@ -11,6 +11,23 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-aop:3.1.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-asm:3.1.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-beans:3.1.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-core:3.1.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-context:3.1.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-expression:3.1.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-jdbc:3.1.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-tx:3.1.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-context-support:3.1.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-web:3.1.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-webmvc:3.1.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-core:3.1.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-web:3.1.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-config:3.1.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-taglibs:3.1.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-acl:3.1.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: com.google.guava:guava:r06" level="project" />
     <orderEntry type="library" name="Maven: javax.servlet:servlet-api:2.5" level="project" />
     <orderEntry type="library" name="Maven: org.apache.karaf.shell:org.apache.karaf.shell.console:2.3.0" level="project" />
     <orderEntry type="library" name="Maven: jline:jline:2.9" level="project" />
@@ -31,26 +48,28 @@
     <orderEntry type="library" name="Maven: org.apache.sshd:sshd-core:0.8.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.mina:mina-core:2.0.5" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.6.1" level="project" />
-    <orderEntry type="library" name="Maven: org.slf4j:jcl-over-slf4j:1.6.1" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: org.slf4j:jcl-over-slf4j:1.6.1" level="project" />
+    <orderEntry type="library" name="Maven: ch.qos.logback:logback-classic:0.9.26" level="project" />
+    <orderEntry type="library" name="Maven: ch.qos.logback:logback-core:0.9.26" level="project" />
     <orderEntry type="library" name="Maven: junit:junit:4.8.1" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-aop:3.1.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-aop:3.2.5.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: aopalliance:aopalliance:1.0" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-asm:3.1.2.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-beans:3.1.2.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-core:3.1.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-beans:3.2.5.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-core:3.2.5.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: commons-logging:commons-logging:1.1.1" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-context:3.1.2.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-expression:3.1.2.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-jdbc:3.1.2.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-tx:3.1.2.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-context-support:3.1.2.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-web:3.1.2.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-webmvc:3.1.2.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-core:3.1.2.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-web:3.1.2.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-config:3.1.2.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-taglibs:3.1.2.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-acl:3.1.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-context:3.2.5.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-expression:3.2.5.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-jdbc:3.2.5.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-tx:3.2.5.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-context-support:3.2.5.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-web:3.2.5.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-asm:3.1.4.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-webmvc:3.2.5.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-core:3.2.5.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-web:3.2.5.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-config:3.2.5.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-taglibs:3.2.5.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-acl:3.2.5.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.data:spring-data-cassandra:1.0.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.data:spring-cql:1.0.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.data:spring-data-commons:1.8.0.RELEASE" level="project" />
@@ -91,7 +110,7 @@
     <orderEntry type="library" name="Maven: log4j:log4j:1.2.16" level="project" />
     <orderEntry type="library" name="Maven: org.apache.cassandra:cassandra-thrift:2.0.6" level="project" />
     <orderEntry type="library" name="Maven: com.github.stephenc:jamm:0.2.5" level="project" />
-    <orderEntry type="library" name="Maven: com.google.guava:guava:r06" level="project" />
+    <orderEntry type="library" name="Maven: com.google.guava:guava:r05" level="project" />
     <orderEntry type="library" name="Maven: org.apache.tiles:tiles-api:2.2.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.tiles:tiles-core:2.2.1" level="project" />
     <orderEntry type="library" name="Maven: commons-digester:commons-digester:2.0" level="project" />
@@ -132,6 +151,27 @@
     <orderEntry type="library" name="Maven: com.sun.jersey:jersey-server:1.4" level="project" />
     <orderEntry type="library" name="Maven: asm:asm:3.1" level="project" />
     <orderEntry type="library" name="Maven: javax.ws.rs:jsr311-api:1.1.1" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.data:spring-data-elasticsearch:1.0.0.BUILD-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: commons-collections:commons-collections:3.2.1" level="project" />
+    <orderEntry type="library" name="Maven: joda-time:joda-time:2.3" level="project" />
+    <orderEntry type="library" name="Maven: org.elasticsearch:elasticsearch:1.1.1" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.lucene:lucene-core:4.7.2" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.lucene:lucene-analyzers-common:4.7.2" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.lucene:lucene-codecs:4.7.2" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.lucene:lucene-queries:4.7.2" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.lucene:lucene-memory:4.7.2" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.lucene:lucene-highlighter:4.7.2" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.lucene:lucene-queryparser:4.7.2" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.lucene:lucene-sandbox:4.7.2" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.lucene:lucene-suggest:4.7.2" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.lucene:lucene-misc:4.7.2" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.lucene:lucene-join:4.7.2" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.lucene:lucene-grouping:4.7.2" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.lucene:lucene-spatial:4.7.2" level="project" />
+    <orderEntry type="library" name="Maven: com.spatial4j:spatial4j:0.4.1" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.3.3" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.3.3" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.3.0" level="project" />
   </component>
 </module>
 

@@ -20,7 +20,6 @@ import com.datastax.driver.core.*;
 import com.datastax.driver.core.utils.UUIDs;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.Date;

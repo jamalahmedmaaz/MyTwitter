@@ -15,6 +15,7 @@
  */
 package internal;
 
+import internal.elasticSearch.ElasticTweetService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,8 +43,11 @@ public class TweetsController {
 
     public static final String DEFAULT_LIMIT = "10";
 
-    @Autowired
+    //@Autowired
     private TweetRepository m_tweetRepository;
+
+    @Autowired
+    private ElasticTweetService elasticTweetService;
 
     @Autowired
     private UserDetailsService m_userManager;
@@ -55,19 +59,19 @@ public class TweetsController {
     ) {
         Date start = toDate(startMillis);
         if (principal == null) {
-            List<CassandraTweet> tweets = m_tweetRepository.getTweets(start, limit + 1);
+            List<Tweet> tweets = m_tweetRepository.getTweets(start, limit + 1);
             if (tweets.size() > limit) {
                 // we have more than the limit so we need to set up the 'next' variable
-                CassandraTweet lastTweet = tweets.get(limit - 1);
+                Tweet lastTweet = tweets.get(limit - 1);
                 model.addAttribute("next", lastTweet.getPostedAt());
             }
             model.addAttribute("tweets", tweets);
             return "publicLine";
         } else {
-            List<CassandraTweet> tweets = m_tweetRepository.getTimeline(principal.getName(), start, limit + 1);
+            List<Tweet> tweets = m_tweetRepository.getTimeline(principal.getName(), start, limit + 1);
             if (tweets.size() > limit) {
                 // we have more than the limit so we need to set up the 'next' variable
-                CassandraTweet lastTweet = tweets.get(limit - 1);
+                Tweet lastTweet = tweets.get(limit - 1);
                 model.addAttribute("next", lastTweet.getPostedAt());
             }
             model.addAttribute("username", principal.getName());
@@ -99,10 +103,10 @@ public class TweetsController {
                                @RequestParam(value = "limit", defaultValue = DEFAULT_LIMIT) int limit
     ) {
         Date start = toDate(startMillis);
-        List<CassandraTweet> tweets = m_tweetRepository.getTweets(start, limit + 1);
+        List<Tweet> tweets = m_tweetRepository.getTweets(start, limit + 1);
         if (tweets.size() > limit) {
             // we have more than the limit so we need to set up the 'next' variable
-            CassandraTweet lastTweet = tweets.get(limit - 1);
+            Tweet lastTweet = tweets.get(limit - 1);
             model.addAttribute("next", lastTweet.getPostedAt());
         }
         model.addAttribute("tweets", tweets);
@@ -116,10 +120,16 @@ public class TweetsController {
     ) {
         Date start = toDate(startMillis);
 
-        List<CassandraTweet> tweets = m_tweetRepository.getUserline(username, start, limit + 1);
+        List<Tweet> tweets = null;
+        if (m_tweetRepository != null) {
+            tweets = m_tweetRepository.getUserline(username, start, limit + 1);
+        } else {
+            tweets = (List<Tweet>) elasticTweetService.findAll();
+        }
+
         if (tweets.size() > limit) {
             // we have more than the limit so we need to set up the 'next' variable
-            CassandraTweet lastTweet = tweets.get(limit - 1);
+            Tweet lastTweet = tweets.get(limit - 1);
             model.addAttribute("next", lastTweet.getPostedAt());
         }
         model.addAttribute("principal", principal);

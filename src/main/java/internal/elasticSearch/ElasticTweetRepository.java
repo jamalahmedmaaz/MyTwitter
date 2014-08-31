@@ -1,10 +1,11 @@
 package internal.elasticSearch;
 
+import internal.Tweet;
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 
 /**
  * Created by cassandra on 30/8/14.
  */
 
-interface ElasticTweetRepository extends ElasticsearchRepository<ElasticTweet, String> {
+public interface ElasticTweetRepository extends ElasticsearchRepository<Tweet, String> {
 }

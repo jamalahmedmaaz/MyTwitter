@@ -27,7 +27,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
-@Repository
+//@Repository
 public class CassandraTweetRepository implements TweetRepository {
     private static final String PUBLIC_USERLINE_KEY = "!PUBLIC!";
     private static final Logger LOG = LoggerFactory.getLogger(CassandraTweetRepository.class);
@@ -92,13 +92,13 @@ public class CassandraTweetRepository implements TweetRepository {
     /**
      * {@inheritDoc}
      */
-    public List<CassandraTweet> getUserline(String username, Date start, int limit) {
+    public List<Tweet> getUserline(String username, Date start, int limit) {
         ResultSet queryResult = execute(
                 "SELECT tweetid, body FROM userline WHERE username = '%s' AND tweetid < maxTimeuuid('%d') ORDER BY tweetid DESC LIMIT %d",
                 username,
                 start.getTime(),
                 limit);
-        List<CassandraTweet> tweets = new ArrayList<CassandraTweet>();
+        List<Tweet> tweets = new ArrayList();
 
         for (Row row : queryResult) {
             UUID id = row.getUUID("tweetid");
@@ -111,13 +111,13 @@ public class CassandraTweetRepository implements TweetRepository {
     /**
      * {@inheritDoc}
      */
-    public List<CassandraTweet> getTimeline(String username, Date start, int limit) {
+    public List<Tweet> getTimeline(String username, Date start, int limit) {
         ResultSet queryResult = execute(
                 "SELECT tweetid, posted_by, body FROM timeline WHERE username = '%s' AND tweetid < maxTimeuuid('%d') ORDER BY tweetid DESC LIMIT %d",
                 username,
                 start.getTime(),
                 limit);
-        List<CassandraTweet> tweets = new ArrayList<CassandraTweet>();
+        List<Tweet> tweets = new ArrayList<Tweet>();
 
         for (Row row : queryResult) {
             UUID id = row.getUUID("tweetid");
@@ -127,7 +127,7 @@ public class CassandraTweetRepository implements TweetRepository {
         return tweets;
     }
 
-    public List<CassandraTweet> getTweets(Date start, int limit) {
+    public List<Tweet> getTweets(Date start, int limit) {
         return getTimeline(PUBLIC_USERLINE_KEY, start, limit);
     }
 

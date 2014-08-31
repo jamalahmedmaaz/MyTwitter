@@ -19,7 +19,7 @@ package internal;
 import java.util.Date;
 import java.util.UUID;
 
-public class CassandraTweet implements Comparable<CassandraTweet>, Tweet {
+public class CassandraTweet implements Comparable<CassandraTweet>,Tweet {
 
     private final UUID id;
     private final Date postedAt;

@@ -17,25 +17,26 @@
 package internal.elasticSearch;
 
 import internal.Tweet;
+import org.springframework.data.elasticsearch.annotations.Document;
 
 import java.util.Date;
-import java.util.UUID;
 
+@Document(indexName = "tweetIndex")
 public class ElasticTweet implements Comparable<ElasticTweet>, Tweet {
 
-    private final UUID id;
+    private final Integer id;
     private final Date postedAt;
     private final String postedBy;
     private final String body;
 
-    public ElasticTweet(String postedBy, String body, UUID id, Date postedAt) {
+    public ElasticTweet(String postedBy, String body, Integer id, Date postedAt) {
         this.postedBy = postedBy;
         this.body = body;
         this.id = id;
         this.postedAt = postedAt;
     }
 
-    public UUID getId() {
+    public Integer getId() {
         return id;
     }
 

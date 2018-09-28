@@ -1,0 +1,12 @@
+[
+  {
+    "fileType": "DIRECTORY",
+    "location": "/home/jamal/deletetest",
+    "periodType": "DAY",
+    "cleanUpPeriod": 7
+  },
+  {
+    "fileType": "FILE",
+    "location": "/home/jamal/deletetest/test.xml"
+  }
+]

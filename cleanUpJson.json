@@ -3,7 +3,7 @@
     "fileType": "DIRECTORY",
     "location": "/home/jamal/deletetest",
     "periodType": "DAY",
-    "cleanUpPeriod": 7
+    "cleanUpPeriodBefore": 7
   },
   {
     "fileType": "FILE",
